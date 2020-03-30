@@ -1,0 +1,18 @@
+﻿@model List<Entities.Message>
+
+@foreach (Entities.Message user in Model)
+{
+    <li data-id="@user.MessageId">
+        <span class="name">@user.MessageSubject</span>
+        <pre class="graybox">@user.MessageText</pre><br />
+        <div class="buttons">
+            <a class="replay" href="~/admin/messages/addMessage" data-extender="addTextBox" data-target="li[data-id=@user.MessageId]>ul" >Replay</a>
+        </div>
+        @if (user.HasChilds)
+        {
+            <ul>
+                @Html.Partial("_MessageList",user.Childs.ToList())
+            </ul>
+        }
+    </li>
+}

@@ -1,0 +1,341 @@
+﻿ul.grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.grid img {
+    float: right;
+    margin-left: 20px;
+}
+.grid img {
+    width: 80px;
+    height: 116px;/**/
+}
+.grid .title {
+font-family: 'Droid Arabic Naskh', serif;
+font-size: 19px;
+color: blueviolet;
+}
+.grid a {
+    background-position-x: left;
+}
+.grid .preview a {
+    display:inline-block;
+    text-indent:20px;
+    background: url(../imgs/preview16.png) no-repeat;
+    text-decoration:none;
+}
+.grid .download a {
+    display:inline-block;
+    text-indent:20px;
+    background: url(../imgs/download16.png) no-repeat;
+    text-decoration:none;
+}
+
+.grid li {
+    margin: 10px 3px;
+    border-bottom:solid 1px silver;
+}
+.grid li div {
+    margin-bottom: 3px;
+}
+.name {
+    display: block;
+    font-size: 21px;
+    color: grey;
+    /*width: 722px;*/
+}
+.name a{
+    color: grey;
+    /*text-decoration:none;*/
+}
+.name .status{
+    display: inline-block;
+    background-color: lightgrey;
+    margin: 0 4px;
+    color: #000;
+    padding:0 4px;
+}
+
+span.category, span.job {
+    display: inline-block;
+    background-color: lightgrey;
+    padding: 4px;
+    margin-left: 4px;
+}
+
+a.email, span.phone {
+    display: block;
+    background-position: left center;  background-repeat: no-repeat;
+    text-indent: 21px;
+    padding: 2px;
+}
+
+a.email {
+    background-image: url(../imgs/email.png);
+}
+
+span.phone {
+    background-image: url(../imgs/phone.gif);
+}
+
+.graybox{display: inline-block;
+background-color: lightgrey;
+padding: 4px;
+margin-left: 4px;}
+a.graybox {
+    text-decoration: none;
+}
+.bluebutton {
+float: left;
+display: block;
+padding: 5px;
+margin-left: 100px;
+background-color: blue;
+color: #fff;
+font-weight: bold;
+text-decoration: none;
+border: solid 1px #999;
+}
+.bluebutton:hover {background-color: lightblue;}
+.buttons {
+text-align: right;
+padding-left: 80px;
+background-color:#fff;
+}
+.buttons>a {
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+.buttons>a:hover {
+color: blue;
+}
+.add {
+    background:url(../imgs/add.png) no-repeat ;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+.enable:hover {
+    background-position-y:-20px;
+color: blue;
+}
+.enable {
+    background:url(../imgs/enable.png) no-repeat;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+.disable:hover {
+    background-position-y:-20px;
+color: blue;
+}
+.disable {
+    background:url(../imgs/disable.png) no-repeat;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+.addAttachment {
+ background:url(../imgs/attachment.png) no-repeat;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+    .addAttachment:hover {
+background-position-y:-20px;
+color: blue;
+    }
+.done {
+ background:url(../imgs/done.png) no-repeat;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+    .done:hover {
+background-position-y:-20px;
+color: blue;
+    }
+.transfer {
+ background:url(../imgs/trans.png) no-repeat;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+    .transfer:hover {
+background-position-y:-20px;
+color: blue;
+    }
+.fold {
+ background:url(../imgs/fold.png) no-repeat;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+    .fold:hover {
+background-position-y:-20px;
+color: blue;
+    }
+.review {
+ background:url(../imgs/check.png) no-repeat ;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+    .review:hover {
+background-position-y:-20px;
+color: blue;
+    }
+.add:hover {
+    background-position-y:-20px;
+color: blue;
+}
+.delete {
+    background:url(../imgs/delete.png) no-repeat ;
+    text-indent: 24px;
+display: inline-block;
+text-decoration: none;
+margin: 3px;
+color: #000;
+font-weight: bold;
+padding: 1px;
+}
+.delete:hover {
+    background-position-y:-20px;
+color: blue;
+}
+.buttons .edit {
+    background:url(../imgs/edit.png) no-repeat ;
+    text-indent: 24px;
+}
+.buttons .edit:hover {
+    background-position-y:-20px;
+}
+
+.buttons .change {
+    background:url(../imgs/change.png) no-repeat ;
+    text-indent: 24px;
+}
+.buttons .change:hover {
+    background-position-y:-20px;
+}
+.performancebox {
+    float: right;
+    width: 250px;
+    padding: 0 5px;
+}
+.performancebox.projects {
+    float: none;
+    width: auto;
+}
+
+.performancebox .quarter {
+    float: right;
+    width:218px;
+    padding:0 1px;
+}
+
+.performancebox .quarter>span {
+    display:block;
+    text-align:center;
+    background-color: #6FBFFF;
+    color: #222;
+    font-weight: bold;
+
+}
+
+.performancebox .year {
+    text-align: center;
+    background-color: #262626;
+    color: #fff;
+    font-weight: bold;
+}
+
+.performancebox .deletemeasure {
+    float:left;
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    font-weight: bold;
+}
+
+.performancebox .factor {
+    float: right;
+    width: 125px;
+}
+.performancebox.projects .factor {
+    width: 109px;
+}
+
+.performancebox .factor span {
+    display: block;
+    text-align: center;
+}
+
+.performancebox .factor input {
+    width: 121px;
+}
+.performancebox.projects .factor input {
+    width: 104px;
+}
+.performancebox .perform .progress {
+    display:inline-block;
+    width:250px;
+    height:20px;
+}
+.grid span.progress {
+    display:inline-block;
+    width:250px;
+    height:20px;
+}
+.infobar {
+    background-color:#fff;
+    border-top:solid 2px #000;
+    border-bottom:solid 2px #000;
+    text-align: left;
+    padding:4px 0;
+}
+.pager {
+    background-color:blue;
+    color: #fff;
+    font-weight:bold;
+    text-align:center;
+    padding: 4px;
+    cursor:pointer;
+}

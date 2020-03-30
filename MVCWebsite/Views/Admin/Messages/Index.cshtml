@@ -1,0 +1,9 @@
+﻿@{
+    List<Entities.Message> Messages = ViewBag.Messages as List<Entities.Message>;
+}
+
+            <a href="~/admin/messages/addMessage" data-extender="addTextBox" data-target=".grid">Add Message</a>
+
+<ul class="grid">
+    @Html.Partial("_MessageList", Messages)
+</ul>

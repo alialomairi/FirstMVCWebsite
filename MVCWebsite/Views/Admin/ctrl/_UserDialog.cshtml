@@ -1,0 +1,47 @@
+﻿@model MVCWebsite.Models.UserModel 
+
+        <ul class="form dlgbody userdialog" data-extender="inputform">
+            <li data-name="FullName">
+                <span>Full Name</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x => x.FullName, new { @class="required" })
+
+                </span>
+            </li>
+            <li data-name="DisplayName">
+                <span>Display Name</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x=>x.DisplayName, new { @class="required" })
+                </span>
+            </li>
+            <li data-name="Email">
+                <span>E-mail</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x=>x.Email, new { @class="required" })
+                </span>
+            </li>
+            <li data-name="Phone">
+                <span>Phone</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x=>x.Phone)
+                </span>
+            </li>
+            <li data-name="Username">
+                <span>Username</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x=>x.Username, new { @class="required" })
+                </span>
+            </li>
+            <li data-name="Password">
+                <span>Password</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x=>x.DisplayName)
+                </span>
+            </li>
+            <li data-name="Confirm" data-confirm="Password">
+                <span>Confirm Password</span>
+                <span class="validator-holder">
+                @Html.TextBoxFor(x=>x.DisplayName)
+                </span>
+            </li>
+        </ul>

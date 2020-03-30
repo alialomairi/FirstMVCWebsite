@@ -1,0 +1,18 @@
+.searchlist {
+    border:  solid 1px #000;
+    width: 300px;
+    display: inline-block;
+    position: relative;
+}
+
+.searchlist>a {
+    width: 80px;
+    padding: 0 4px;
+    background-color: #999;
+    border: none;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    text-align: center;
+}

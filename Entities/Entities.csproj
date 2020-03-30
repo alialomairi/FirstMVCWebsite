@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{07E31E9A-CD8C-4260-8CFC-CB67F855B63D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ForignKey.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageType.cs" />
+    <Compile Include="Migrations\201807210036342_InitialCreate.cs" />
+    <Compile Include="Migrations\201807210036342_InitialCreate.Designer.cs">
+      <DependentUpon>201807210036342_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807212208301_addDisplayName.cs" />
+    <Compile Include="Migrations\201807212208301_addDisplayName.Designer.cs">
+      <DependentUpon>201807212208301_addDisplayName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807231910116_addFacebookId.cs" />
+    <Compile Include="Migrations\201807231910116_addFacebookId.Designer.cs">
+      <DependentUpon>201807231910116_addFacebookId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011516091_addEnable.cs" />
+    <Compile Include="Migrations\201808011516091_addEnable.Designer.cs">
+      <DependentUpon>201808011516091_addEnable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011549471_addIsAdmin.cs" />
+    <Compile Include="Migrations\201808011549471_addIsAdmin.Designer.cs">
+      <DependentUpon>201808011549471_addIsAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809081226536_addMaterials.cs" />
+    <Compile Include="Migrations\201809081226536_addMaterials.Designer.cs">
+      <DependentUpon>201809081226536_addMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810271239456_addUserType.cs" />
+    <Compile Include="Migrations\201810271239456_addUserType.Designer.cs">
+      <DependentUpon>201810271239456_addUserType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811212032071_addMessages.cs" />
+    <Compile Include="Migrations\201811212032071_addMessages.Designer.cs">
+      <DependentUpon>201811212032071_addMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811271937229_removeParent.cs" />
+    <Compile Include="Migrations\201811271937229_removeParent.Designer.cs">
+      <DependentUpon>201811271937229_removeParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="TeachMeContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807210036342_InitialCreate.resx">
+      <DependentUpon>201807210036342_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807212208301_addDisplayName.resx">
+      <DependentUpon>201807212208301_addDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807231910116_addFacebookId.resx">
+      <DependentUpon>201807231910116_addFacebookId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011516091_addEnable.resx">
+      <DependentUpon>201808011516091_addEnable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011549471_addIsAdmin.resx">
+      <DependentUpon>201808011549471_addIsAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809081226536_addMaterials.resx">
+      <DependentUpon>201809081226536_addMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810271239456_addUserType.resx">
+      <DependentUpon>201810271239456_addUserType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811212032071_addMessages.resx">
+      <DependentUpon>201811212032071_addMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811271937229_removeParent.resx">
+      <DependentUpon>201811271937229_removeParent.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

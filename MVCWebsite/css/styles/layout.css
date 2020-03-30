@@ -1,0 +1,135 @@
+body {
+    margin:0;
+    padding:0;
+}
+#header {
+    background-color:#999;
+}
+#content {
+    background-color: #f8f8f8;
+}
+#footer{
+    background-color:#999;
+    padding: 3px 0;
+}
+
+
+#main-menu ul, #footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#footer ul {
+    float:left;
+}
+
+#footer .copyrights {
+    float:right;
+    color:#fff;
+}
+
+#main-menu li {
+    float: left;
+    width: 60px;
+    border-right: solid 1px #000;
+    padding: 0 4px;
+}
+
+#footer li {
+    float: left;
+    width: 60px;
+    border-right: solid 1px #fff;
+    padding: 0 4px;
+}
+
+#main-menu a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+#footer a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+#main-menu {
+    background-color: #d1d1d1;
+    padding: 3px 0;
+}
+.clearfix::after {
+    content: '';
+    display:block;
+    clear:both;
+}
+.center {
+    width:800px;
+    margin:auto;
+}
+
+#header a.logo {
+    display: block;
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    float: left;
+}
+
+#header h1 {
+    margin: 0;
+    padding-top: 64px;
+    text-indent: 20px;
+    float: left;
+}
+
+#main-menu li.last {
+    border: none;
+}
+
+#header .accountlogs{
+    float:right;
+}
+
+div[data-role=main] {
+    background-color: #fff;
+    padding: 20px 10px;
+}
+
+.accountlogs {
+    position:relative;
+}
+
+.accountlogs ul {
+    list-style:none;
+    padding:5px;
+    margin:0;
+    background-color:#fff;
+    position:absolute;
+    right:0;
+    display:none;
+}
+
+.orseperator {
+border: solid 1px #000;
+    height: 0;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.orseperator::before {
+display: block;
+    background-color: #fff;
+    margin-top: -10px;
+    position: absolute;
+    left: 50%;
+    padding: 0 5px;
+    content:'or'
+}
+
+.picturebox {
+    float: right;
+    margin-left: 20px;
+    border: solid 2px #000;
+}

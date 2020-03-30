@@ -1,0 +1,73 @@
+﻿@model MVCWebsite.Models.SignUpModel
+
+@using (Html.BeginForm("signup","account", FormMethod.Post, new {enctype="multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Create User</legend>
+        <ul class="form">
+        <li>
+            <input type="file" name="picture" data-extender="picturebox" accept=".jpg"
+                data-size="150, 150" 
+                data-picture="/imgs/nopic.jpg"
+                data-boxstyle="picturebox"/>
+        </li>
+            <li>
+                <label>Full Name (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x=>x.FullName)
+                    @Html.ValidationMessageFor(x=>x.FullName,"", new { @class = "validator"})
+                </span>
+
+            </li>
+            <li>
+                <label>Display Name (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x=>x.DisplayName)
+                    @Html.ValidationMessageFor(x=>x.DisplayName,"", new { @class = "validator"})
+                </span>
+
+            </li>
+            <li>
+                <label>E-mail (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x=>x.Email)
+                    @Html.ValidationMessageFor(x=>x.Email,"", new { @class = "validator"})
+                </span>
+
+            </li>
+            <li>
+                <label>Phone (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x=>x.Phone)
+                    @Html.ValidationMessageFor(x=>x.Phone,"", new { @class = "validator"})
+                </span>
+
+            </li>
+            <li>
+                <label>Username (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x=>x.Username)
+                    @Html.ValidationMessageFor(x=>x.Username,"", new { @class = "validator"})
+                </span>
+            </li>
+            <li>
+                <label>Password (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.PasswordFor(x=>x.Password)
+                    @Html.ValidationMessageFor(x=>x.Password,"", new { @class = "validator"})
+                </span>
+            </li>
+            <li>
+                <label>Confirm Password (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.PasswordFor(x=>x.Confirm)
+                    @Html.ValidationMessageFor(x=>x.Confirm,"", new { @class = "validator"})
+                </span>
+            </li>
+            <li>
+                <input type="submit" value="Create" />
+                or <a href="@Url.Content("~/")">Cancel</a>
+            </li>
+        </ul>
+    </fieldset>
+}

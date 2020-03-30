@@ -1,0 +1,89 @@
+﻿.modalbg
+{
+	position: fixed;
+	left: 0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	background-color:gray;
+	opacity: 0.7;
+}
+.dialogbox
+{
+	position: fixed;
+	z-index: 10001;
+	background-color:white;
+	border:solid 2px blue;
+}
+.dialogbox .titlebar
+{
+	background-color:blue;
+	color: white;
+	padding:3px;
+}
+.dlgbody
+{
+	padding: 10px;
+	display:none;
+}
+.dialogbox .title
+{
+	float:right;
+}
+.dialogbox .close
+{
+	float:left;
+	display: inline-block;
+	width:16px;
+	height:16px;
+	background-image:url(../imgs/close.gif);
+}
+.dialogbox .icon
+{
+	float:right;
+	padding:10px;
+}
+.dialogbox .icon span
+{
+	display: inline-block;
+	width:32px;
+	height:32px;
+}
+.dialogbox .icon.exclamation span
+{
+	background-image:url(../imgs/exclamation.gif);
+}
+.dialogbox .icon.information span
+{
+	background-image:url(../imgs/information.gif);
+}
+.dialogbox .icon.error span
+{
+	background-image:url(../imgs/error.gif);
+}
+.dialogbox .icon.question span
+{
+	background-image:url(../imgs/question.gif);
+}
+.dialogbox .text
+{
+	float: right;
+	padding: 10px;
+	line-height:32px;
+}
+.dialogbox .buttons
+{
+	text-align:left;
+}
+	.dialogbox .buttons input
+	{
+		display: inline-block;
+		width: 70px;
+		height: 21px;
+		margin: 3px;
+	}
+.clear
+{
+	clear:both;
+}

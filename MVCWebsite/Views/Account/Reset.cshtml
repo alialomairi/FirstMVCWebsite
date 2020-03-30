@@ -1,0 +1,35 @@
+﻿@model MVCWebsite.Models.ResetAccountModel
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Create User</legend>
+        <ul class="form">
+            <li>
+                <label>E-mail (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x=>x.Email)
+                    @Html.ValidationMessageFor(x=>x.Email,"", new { @class = "validator"})
+                </span>
+            </li>
+            <li>
+                <label>Password (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.PasswordFor(x=>x.Password)
+                    @Html.ValidationMessageFor(x=>x.Password,"", new { @class = "validator"})
+                </span>
+            </li>
+            <li>
+                <label>Confirm Password (<span class="required">*</span>)</label>
+                <span class="validator-holder">
+                    @Html.PasswordFor(x=>x.Confirm)
+                    @Html.ValidationMessageFor(x=>x.Confirm,"", new { @class = "validator"})
+                </span>
+            </li>
+            <li>
+                <input type="submit" value="Reset" />
+                or <a href="@Url.Content("~/")">Cancel</a>
+            </li>
+        </ul>
+    </fieldset>
+}
