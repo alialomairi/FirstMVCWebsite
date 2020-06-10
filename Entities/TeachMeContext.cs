@@ -11,6 +11,10 @@ namespace Entities
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Material> Materials { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Node> Nodes { get; set; }
+        public DbSet<ContentPage> ContentPages { get; set; }
     }
 }

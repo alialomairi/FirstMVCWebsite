@@ -18,6 +18,7 @@ namespace Entities
         public virtual Message Parent { get; set; }
 
         public virtual ICollection<Message> Childs { get; set; }
+        [NotMapped]
         public bool HasChilds { get { return Childs!=null&&Childs.Count > 0; } }
     }
 }

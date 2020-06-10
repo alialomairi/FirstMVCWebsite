@@ -1,0 +1,15 @@
+﻿@model List<Entities.User>
+
+@foreach (Entities.User user in Model)
+{
+    <li data-id="@user.UserId">
+        <span class="name">@user.DisplayName</span>
+        <span class="graybox">@user.FullName</span><br />
+        <a href="mailto:@user.Email" class="email">@user.Email</a>
+        <div class="buttons">
+            <a class="edit" href="~/admin/users/editUser" data-extender="opendialog" data-dialog=".userdialog" data-getservice="@Url.Content("~/admin/users/getuser")" data-closetarget="li">Edit User</a>
+            <a class="delete" href="~/admin/users/deleteUser" data-extender="postdata" data-closetarget="li" data-confirmmsg="Are you sure you want to delete this User?">Delete User</a>
+            <a class="@(user.Enabled ? "disable" : "enable")" href="~/admin/users/toggleEnable" data-extender="postdata" data-closetarget="li">@(user.Enabled ? "Disable" : "Enable")</a>
+        </div>
+    </li>
+}

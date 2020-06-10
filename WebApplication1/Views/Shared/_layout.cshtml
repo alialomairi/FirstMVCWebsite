@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-ad-client="ca-pub-5748963754259958" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <title>Website Name : @ViewBag.Title</title>
+    <script src="~/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="~/js/extend-1.0.js" type="text/javascript"></script>
+    <script src="~/extenders" type="text/javascript"></script>
+    <script src="~/js/facebook.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/styles" rel="stylesheet" type="text/css" />
+    @RenderSection("head", false)
+</head>
+<body>
+    <header>
+        <div id="loginbar">
+            <div class="container">
+                <div id="loginctrl">
+                    @if (User == null || !User.Identity.IsAuthenticated)
+                    {
+                        <a href="~/signin">Signin</a>
+                        <a href="~/signup">Signup</a>
+                    }
+                    else
+                    {
+                        <a id="display-name" href="#" data-extender="openUserList">
+                            @User.Identity.Name
+                        </a>
+                        <ul id="userlist">
+                            <li>
+                                <a href="~/myprofile">My Profile</a>
+                            </li>
+                            <li>
+                                <a href="~/signout">Signout</a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+        <div id="logobar">
+            <div class="container">
+                <a id="logo" href="~/">
+                    <img src="~/imgs/logo.jpg" alt="All Engineers Logo" />
+                </a>
+                <a target="_blank" href="#" id="headerad">
+                    <img src="~/imgs/headerad.jpg" alt="header ad" />
+                </a>
+            </div>
+        </div>
+        <div id="main-menu" class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse h-menu">
+                    <ul class="nav navbar-nav">
+                        @if (User != null && User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("teacher")))
+                        {
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <a href="~/admin/users">Users</a>
+                                </li>
+                                <li>
+                                    <a href="~/admin/categories">Categories</a>
+                                </li>
+                                <li>
+                                    <a href="~/admin/tutorials">Tutorial</a>
+                                </li>
+                                <li class="last">
+                                    <a href="~/admin/messages">Messages</a>
+                                </li>
+                            }
+                            else if (User.IsInRole("teacher"))
+                            {
+                                <li>
+                                    <a href="~/teacher/tutorials">My Tutorials</a>
+                                </li>
+                                <li>
+                                    <a href="#">Item 2</a>
+                                </li>
+                                <li class="last">
+                                    <a href="#">Item 3</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            @Html.CategoryMenu()
+                        }
+                    </ul>
+                </div>
+
+                </div>
+
+            </div>
+    </header>
+    <div id="body" role="main">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div id="social" class="col-md-3">
+                    Follow us on
+                    <nav class="h-menu">
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank" class="fa fa-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="fa fa-twitter"></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="fa fa-youtube"></a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="fa fa-instagram"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="content-links"  class="col-md-6">
+                    <nav class="h-menu">
+                        <ul>
+                            <li>
+                                <a href="~/aboutus">About Us</a>
+                            </li>
+                            <li>
+                                <a href="~/terms">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="~/privacy">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="~/contactus">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="copyright" class="col-md-3">
+                    <span>Copyright&copy;</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

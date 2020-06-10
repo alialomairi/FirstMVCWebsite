@@ -1,0 +1,75 @@
+ul.form {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+ul.form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form label {
+    display: block;
+}
+
+.form li {
+    margin-bottom: 5px;
+}
+
+input[type=text], input[type=password],select {
+    width: 100%;
+    height: 25px;
+}
+
+input[type=submit], input[type=button] {
+    width: 80px;
+    height: 25px;
+    background-color: #999;
+    border: none;
+}
+
+span.validator-holder {
+    display: inline;
+    position: relative;
+}
+
+.validator {
+    position: absolute;
+    color: #ff0000;
+    font-size: small;
+    word-spacing: normal;
+    right: 0;
+    margin: 5px;
+}
+
+.form .inline label {
+    display: inline;
+}
+
+.form label.option-label{
+    display:inline-block;
+}
+fieldset {
+    border: none;
+}
+
+legend {
+    text-decoration: underline #ff0000;
+}
+.orseperator.horizontal {
+    border: solid 1px #000;
+    width: 70%;
+    margin: auto;
+    height: 0;
+    position: initial;
+}
+
+    .orseperator.horizontal:before {
+        content: 'or';
+        position: absolute;
+        padding: 4px;
+        background-color: #fff;
+        margin-top: -15px;
+        left: 50%;
+    }

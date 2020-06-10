@@ -1,0 +1,47 @@
+﻿@model AllEngineers.Models.UserModel 
+
+        <ul class="form dlgbody userdialog" data-extender="inputform">
+            <li data-name="FullName">
+                @Html.LabelFor(x=>x.FullName,"Full Name")
+                <span class="validator-holder">
+                @Html.TextBoxFor(x => x.FullName, new { @class="required" })
+
+                </span>
+            </li>
+            <li data-name="DisplayName">
+                @Html.LabelFor(x => x.DisplayName, "Display Name")
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x => x.DisplayName, new { @class = "required" })
+                </span>
+            </li>
+            <li data-name="Email">
+                @Html.LabelFor(x => x.Email, "E-mail")
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "required" })
+                </span>
+            </li>
+            <li data-name="Phone">
+                @Html.LabelFor(x => x.Phone, "Phone")
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x => x.Phone)
+                </span>
+            </li>
+            <li data-name="Username">
+                @Html.LabelFor(x => x.Username, "Username")
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x => x.Username, new { @class = "required" })
+                </span>
+            </li>
+            <li data-name="Password">
+                @Html.LabelFor(x => x.Password, "Password")
+                <span class="validator-holder">
+                    @Html.PasswordFor(x => x.Password)
+                </span>
+            </li>
+            <li data-name="Confirm" data-confirm="Password">
+                @Html.LabelFor(x => x.Confirm, "Confirm Password")
+                <span class="validator-holder">
+                    @Html.PasswordFor(x => x.Confirm)
+                </span>
+            </li>
+        </ul>

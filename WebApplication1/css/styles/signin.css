@@ -1,0 +1,75 @@
+﻿#login-form, #social-login, #signup-form {
+    padding: 20px;
+}
+
+section > h2 {
+    text-align: center;
+}
+#login-form {
+    border-right: none;
+    border-bottom: solid 1px #000;
+}
+
+@media (min-width: 768px) {
+    #login-form{
+        border-right:solid 1px #000;
+        border-bottom:none;
+    }
+    .orseperator:not(.ho) {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+    }
+
+        .orseperator:before {
+            left:0;
+            top: 50%;
+        }
+}
+
+    .orseperator:before {
+        content: 'or';
+        position: absolute;
+        padding: 4px;
+        background-color: #fff;
+        margin-left: -12px;
+        margin-top: -16px;
+        left:50%;
+    }
+form {
+    padding: 30px 10px;
+}
+
+#social-login > ul.form {
+    padding: 30px 10px;
+}
+section#social-login li > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 4px;
+    display: block;
+}
+
+    section#social-login li > a.facebook {
+        background-color: #43609C;
+    }
+
+    section#social-login li > a.gpluss {
+        background-color: #7c201b;
+    }
+
+    section#social-login li > a.linkedin {
+        background-color: #3587c2;
+    }
+
+        section#social-login li > a.linkedin:hover {
+            background-color: #43a8f1;
+        }
+
+    section#social-login li > a.facebook:hover {
+        background-color: #6b98f3;
+    }
+
+    section#social-login li > a.gpluss:hover {
+        background-color: #c8342c;
+    }

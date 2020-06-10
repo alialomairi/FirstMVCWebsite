@@ -1,0 +1,68 @@
+﻿@model AllEngineers.Models.SignInModel
+
+
+
+    <section id="login-form" class="col-sm-6">
+        <h2>Signin using my account</h2>
+        @using (Html.BeginForm())
+        {
+            if (ViewBag.Invalid)
+            {
+                <div>
+                    Invalid Username or Password.
+                </div>
+            }
+
+            <ul class="form">
+                <li>
+                    <label>Username:</label>
+                    <span class="validator-holder">
+                        @Html.TextBoxFor(x => x.Username)
+                        @Html.ValidationMessageFor(x => x.Username, "", new { @class = "validator" })
+                    </span>
+                </li>
+                <li>
+                    <label>Password:</label>
+                    <span class="validator-holder">
+                        @Html.PasswordFor(x => x.Password)
+                        @Html.ValidationMessageFor(x => x.Password, "", new { @class = "validator" })
+                    </span>
+                </li>
+                <li>
+                    @Html.CheckBoxFor(x => x.RememberMe)
+                    <label class="option-label">Remember Me</label>
+                </li>
+                <li>
+                    <input type="submit" value="Login" /> or <a href="~/home/signup">Create User</a>
+                </li>
+                <li>
+                    <a href="~/account/reset">I forget my password.</a>
+                </li>
+            </ul>
+        }
+    </section>
+<div class="orseperator">
+</div>
+<section id="social-login" class="col-sm-6">
+    <h2>Signin using social accounts</h2>
+    <ul class="form">
+        <li>
+            <a href="~/account/linkedinlogin" data-extender="linkedinLogin" class="linkedin">
+                <span class="fa fa-linkedin"></span>
+                Login with Linked In
+            </a>
+        </li>
+        <li>
+            <a href="~/account/facebooklogin" data-extender="facebookLogin" class="facebook">
+                <span class="fa fa-facebook"></span>
+                Login with facebook
+            </a>
+        </li>
+        <li>
+            <a href="~/account/googlelogin" data-extender="googleLogin" class="gpluss">
+                <span class="fa fa-google-plus"></span>
+                Login with google+
+            </a>
+        </li>
+    </ul>
+</section>

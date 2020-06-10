@@ -1,0 +1,60 @@
+﻿@model AllEngineers.Models.ContactModel
+
+<section id="social-login" class="col-6">
+    <h2>Contact us on:</h2>
+    <ul class="form">
+        <li>
+            <address>
+                Facebook Page:
+                <a href="#">Facebook Page Url</a>
+            </address>
+        </li>
+        <li>
+            <address>
+                Twitters Page:
+                <a href="#">Twitters Page Urll</a>
+            </address>
+        </li>
+        <li>
+            <address>
+                Twitters Page:
+                <a href="#">Twitters Page Urll</a>
+            </address>
+        </li>
+    </ul>
+</section>
+<div class="orseperator">
+</div>
+<section id="login-form" class="col-6">
+    <h2>Send us a message</h2>
+    @using (Html.BeginForm())
+    {
+
+        <ul class="form">
+            <li>
+                @Html.LabelFor(x=>x.FullName)
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x => x.FullName)
+                    @Html.ValidationMessageFor(x => x.FullName, "", new { @class = "validator" })
+                </span>
+            </li>
+            <li>
+                @Html.LabelFor(x=>x.Email)
+                <span class="validator-holder">
+                    @Html.TextBoxFor(x => x.Email)
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "validator" })
+                </span>
+            </li>
+            <li>
+                @Html.LabelFor(x => x.Message)
+                <span class="validator-holder">
+                    @Html.TextAreaFor(x => x.Message)
+                    @Html.ValidationMessageFor(x => x.Message, "", new { @class = "validator" })
+                </span>
+            </li>
+            <li>
+                <input type="submit" value="Send" />
+            </li>
+        </ul>
+    }
+</section>

@@ -1,0 +1,20 @@
+﻿#banner {
+    width:100%;
+}
+
+#home-articles:after {
+    display: block;
+    content: '';
+    height: 0;
+    clear: both;
+}
+
+#home-articles>article {
+    float: left;
+    padding: 10px;
+}
+
+.more {
+    text-align: right;
+}
+

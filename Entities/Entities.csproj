@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForignKey.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="ContentPage.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageType.cs" />
@@ -86,7 +87,33 @@
     <Compile Include="Migrations\201811271937229_removeParent.Designer.cs">
       <DependentUpon>201811271937229_removeParent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004260733486_AddTrainer.cs" />
+    <Compile Include="Migrations\202004260733486_AddTrainer.Designer.cs">
+      <DependentUpon>202004260733486_AddTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004270957484_AddSubjects.cs" />
+    <Compile Include="Migrations\202004270957484_AddSubjects.Designer.cs">
+      <DependentUpon>202004270957484_AddSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004291419157_addKey.cs" />
+    <Compile Include="Migrations\202004291419157_addKey.Designer.cs">
+      <DependentUpon>202004291419157_addKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004291518148_addKey2.cs" />
+    <Compile Include="Migrations\202004291518148_addKey2.Designer.cs">
+      <DependentUpon>202004291518148_addKey2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005031243598_AddNodes.cs" />
+    <Compile Include="Migrations\202005031243598_AddNodes.Designer.cs">
+      <DependentUpon>202005031243598_AddNodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005041425501_AddContentPages.cs" />
+    <Compile Include="Migrations\202005041425501_AddContentPages.Designer.cs">
+      <DependentUpon>202005041425501_AddContentPages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Subject.cs" />
     <Compile Include="TeachMeContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
@@ -123,6 +150,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811271937229_removeParent.resx">
       <DependentUpon>201811271937229_removeParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004260733486_AddTrainer.resx">
+      <DependentUpon>202004260733486_AddTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004270957484_AddSubjects.resx">
+      <DependentUpon>202004270957484_AddSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291419157_addKey.resx">
+      <DependentUpon>202004291419157_addKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291518148_addKey2.resx">
+      <DependentUpon>202004291518148_addKey2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005031243598_AddNodes.resx">
+      <DependentUpon>202005031243598_AddNodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005041425501_AddContentPages.resx">
+      <DependentUpon>202005041425501_AddContentPages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

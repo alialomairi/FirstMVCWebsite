@@ -1,0 +1,204 @@
+body {
+    font-family: tahoma;
+    font-size: 12pt;
+    margin: 0;
+    background-color: #b8d8ed;
+}
+
+#loginbar {
+    padding: 4px;
+    text-align: right;
+    background-color: #fff;
+}
+
+.center {
+    width: 960px;
+    margin: auto;
+}
+
+header {
+    background-color: #3f85b4;
+}
+
+#logo {
+    float: left;
+    padding: 3px 0;
+    margin-top: -30px;
+    display: block;
+}
+
+    #logo img {
+        display: block;
+    }
+
+#headerad {
+    padding: 3px 0;
+    float: right;
+    display: block;
+}
+
+    #headerad img {
+        display: block;
+    }
+
+#loginctrl {
+    display: inline-block;
+    position: relative;
+}
+
+    #loginctrl > a {
+        font-size: .8em;
+        color: #000;
+    }
+
+.center:after {
+    clear: both;
+    display: block;
+    content: '';
+}
+
+#main-menu {
+    padding: 4px;
+    background-color: #fff;
+}
+
+.h-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.h-menu>ul ul {
+    display:none;
+    position:absolute;
+}
+
+.h-menu>ul li:hover>ul {
+    display:block;
+}
+
+.h-menu>ul:after {
+    display:block;
+    content:'';
+    clear:both;
+    height:0;
+}
+
+    .h-menu>ul > li {
+        float: left;
+    }
+
+#main-menu ul > li > a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 0 15px;
+}
+
+    #main-menu ul > li > a:hover {
+        color: #fff;
+        background-color: #3f85b4;
+    }
+
+#body > .container {
+    background-color: #fff;
+    border-top: solid 1px #b8d8ed;
+    position:relative;
+}
+
+footer {
+    background-color: #3f85b4;
+}
+
+        #social li > a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20pt;
+            padding: 5px;
+        }
+
+#social {
+    text-align: left;
+    color:#fff;
+}
+#content-links {
+    padding: 10px 0px;
+    text-align:center;
+}
+#content-links ul {
+    display:inline-block;
+}
+
+#copyright {
+    text-align: right;
+    color: #fff;
+    padding: 5px;
+}
+
+#social li > a.fa-facebook:hover {
+    color: #43609C;
+}
+
+#social li > a.fa-twitter:hover {
+    color: #28A9E0;
+}
+
+#social li > a.fa-youtube:hover {
+    color: #E62117;
+}
+
+#social li > a.fa-instagram:hover {
+    color: #edc261;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul#userlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: solid 1px #000;
+    width: 150px;
+    position: absolute;
+    background-color: #fff;
+    text-align: left;
+    right: 0;
+    display: none;
+}
+
+    ul#userlist.opened {
+        display: block;
+    }
+#main-menu ul ul {
+    background-color: #fff;
+    border: solid 1px #000;
+    padding: 4px;
+}
+
+    #main-menu ul ul ul {
+        left: 100%;
+        top: 0;
+        width: max-content;
+        margin-left: -5px;
+    }
+
+    #main-menu ul ul > li {
+        margin: 3px 0;
+    }
+
+        #main-menu ul ul > li > a {
+            text-align: left;
+        }
+#content-links li > a {
+    margin: 0 4px;
+    color: #fff;
+}
+
+    #content-links li > a:hover {
+        color: #1170e8;
+    }
+

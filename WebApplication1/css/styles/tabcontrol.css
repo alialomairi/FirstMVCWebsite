@@ -1,0 +1,40 @@
+ul.tabcontrol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position:relative;
+}
+
+ul.tabcontrol>li {
+    float:left
+}
+
+ul.tabcontrol>li>div {
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    border:solid 1px #000
+}
+
+ul.tabcontrol>li.selected>div {
+    display:block;
+}
+
+
+ul.tabcontrol>li>a {
+    padding:2px;
+    margin-right:2px;
+    background-color:#999;
+    text-decoration:none;
+    color:#fff;
+}
+
+ul.tabcontrol>li.selected>a {
+    color:#000;
+    background-color:#fff;
+    border-top:solid 1px #000;
+    border-right:solid 1px #000;
+    border-left:solid 1px #000;
+}
+

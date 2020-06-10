@@ -1,0 +1,135 @@
+﻿@model AllEngineers.Models.UserModel
+@{
+    SelectListItem[] materials = ViewBag.Materials as SelectListItem[];
+}
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>My Profile</legend>
+        <ul class="form">
+            <li>
+                <ul data-extender="tabcontrol" class="tabcontrol clearfix" style="height: 250px;">
+                    <li>
+                        <a href="#">Personal Data</a>
+                        <div>
+                            <ul>
+                                <li>
+                                    <input type="file" name="picture" data-extender="picturebox" accept=".jpg"
+                data-size="150, 150" 
+                data-picture="/pictures/@(ViewBag.UserId).jpg"
+                data-boxstyle="picturebox"/>
+                                </li>
+                                <li>
+                                    <label>Full Name (<span class="required">*</span>)</label>
+                                    <span class="validator-holder">
+                                        @Html.TextBoxFor(x => x.FullName)
+                                        @Html.ValidationMessageFor(x => x.FullName, "", new { @class = "validator" })
+                                    </span>
+
+                                </li>
+                                <li>
+                                    <label>Display Name (<span class="required">*</span>)</label>
+                                    <span class="validator-holder">
+                                        @Html.TextBoxFor(x => x.DisplayName)
+                                        @Html.ValidationMessageFor(x => x.DisplayName, "", new { @class = "validator" })
+                                    </span>
+
+                                </li>
+                                <li>
+                                    <label>E-mail (<span class="required">*</span>)</label>
+                                    <span class="validator-holder">
+                                        @Html.TextBoxFor(x => x.Email)
+                                        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "validator" })
+                                    </span>
+
+                                </li>
+                                <li>
+                                    <label>Phone (<span class="required">*</span>)</label>
+                                    <span class="validator-holder">
+                                        @Html.TextBoxFor(x => x.Phone)
+                                        @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "validator" })
+                                    </span>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Account Data</a>
+                        <div>
+                            <ul>
+                                <li>
+                                    <label>Username (<span class="required">*</span>)</label>
+                                    <span class="validator-holder">
+                                        @Html.TextBoxFor(x => x.Username)
+                                        @Html.ValidationMessageFor(x => x.Username, "", new { @class = "validator" })
+                                    </span>
+                                </li>
+                                <li>
+                                    <label>Password</label>
+                                    <span class="validator-holder">
+                                        @Html.PasswordFor(x => x.Password)
+                                        @Html.ValidationMessageFor(x => x.Password, "", new { @class = "validator" })
+                                    </span>
+                                </li>
+                                <li>
+                                    <label>Confirm Password</label>
+                                    <span class="validator-holder">
+                                        @Html.PasswordFor(x => x.Confirm)
+                                        @Html.ValidationMessageFor(x => x.Confirm, "", new { @class = "validator" })
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Role Data</a>
+                        <div>
+                            <ul>
+
+                                <li>
+                                    <label>I am a</label>
+                                    @Html.DropDownListFor(x => x.Role, new SelectListItem[]{
+           new SelectListItem{ Text="Student", Value="0"},
+           new SelectListItem{ Text="Teacher", Value="1"}
+           })
+                                </li>
+                                <li>
+                                    <label>I Teach</label>
+                                    <select               
+                                        multiple = "multiple", 
+               data-extender ="searchlist",
+               data-emptytext="لا يوجد نتائج", 
+               data-newtext="أخرى", 
+               data-searchplaceholder="إبحث", 
+               data-addservice="@Url.Content("~/account/addMaterial")">
+                                        @foreach (SelectListItem item in materials)
+                                        {
+                                            <option value="@item.Value" @item.Selected?"selected=\"selected\"":"">@item.Text</option>
+                                        }
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>From Grade</label>
+                                    @Html.DropDownListFor(x => x.Role, new SelectListItem[]{
+           new SelectListItem{ Text="Student", Value="0"},new SelectListItem{ Text="Teacher", Value="1"}
+           })
+                                </li>
+                                <li>
+                                    <label>To Grade</label>
+                                    @Html.DropDownListFor(x => x.Role, new SelectListItem[]{
+           new SelectListItem{ Text="Student", Value="0"},new SelectListItem{ Text="Teacher", Value="1"}
+           })
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="submit" value="Save" />
+                or <a href="@Url.Content("~/")">Cancel</a>
+            </li>
+        </ul>
+    </fieldset>
+}
