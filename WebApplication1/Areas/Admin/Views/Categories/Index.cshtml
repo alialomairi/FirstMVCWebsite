@@ -1,0 +1,16 @@
+﻿@{
+    List<Entities.Category> categories = ViewBag.Categories as List<Entities.Category>;
+}
+
+@Html.Partial("_CategoryDialog", null)
+@Html.Partial("_CategoryFilter", null)
+<a class="add" href="~/admin/categories/addCategory" data-extender="opendialog" data-dialog=".categorydialog" data-target=".grid" data-action="add">Add Category</a>
+<ul class="grid"
+    data-extender="contentlist"
+    data-add=".add"
+    data-filterform=".filterform"
+    data-reloadservice="@Url.Content("~/admin/categories/reloadCategories")"
+    data-pagesize="10"
+    data-totalcount="@ViewBag.totalcount">
+    @Html.Partial("_CategoryList", categories)
+</ul>

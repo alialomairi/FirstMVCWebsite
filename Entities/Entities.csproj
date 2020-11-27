@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="ContentPage.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageType.cs" />
@@ -111,6 +112,22 @@
     <Compile Include="Migrations\202005041425501_AddContentPages.Designer.cs">
       <DependentUpon>202005041425501_AddContentPages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008081750078_addSubject.cs" />
+    <Compile Include="Migrations\202008081750078_addSubject.Designer.cs">
+      <DependentUpon>202008081750078_addSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008100639503_addGender.cs" />
+    <Compile Include="Migrations\202008100639503_addGender.Designer.cs">
+      <DependentUpon>202008100639503_addGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008141324084_addDescription.cs" />
+    <Compile Include="Migrations\202008141324084_addDescription.Designer.cs">
+      <DependentUpon>202008141324084_addDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008141329465_addCreationDate.cs" />
+    <Compile Include="Migrations\202008141329465_addCreationDate.Designer.cs">
+      <DependentUpon>202008141329465_addCreationDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Subject.cs" />
@@ -168,6 +185,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005041425501_AddContentPages.resx">
       <DependentUpon>202005041425501_AddContentPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008081750078_addSubject.resx">
+      <DependentUpon>202008081750078_addSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008100639503_addGender.resx">
+      <DependentUpon>202008100639503_addGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008141324084_addDescription.resx">
+      <DependentUpon>202008141324084_addDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008141329465_addCreationDate.resx">
+      <DependentUpon>202008141329465_addCreationDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

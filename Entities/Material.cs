@@ -12,6 +12,8 @@ namespace Entities
         public int MaterialId { get; set; }
         [MaxLength(50)]
         public string MaterialName { get; set; }
+        public string Description { get; set; }
+        public DateTime CreationDate { get; set; }
 
         [ForeignKey("Trainer")]
         public int TrainerId { get; set; }
@@ -22,5 +24,13 @@ namespace Entities
 
         public virtual ICollection<Subject> Subjects { get; set; }
         public string MaterialKey { get; set; }
+        [NotMapped]
+        public string Link
+        {
+            get
+            {
+                return Category.Link + "/" + MaterialKey;
+            }
+        }
     }
 }

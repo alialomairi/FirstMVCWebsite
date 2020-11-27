@@ -32,7 +32,7 @@ namespace AllEngineers.Controllers
             StringBuilder builder = new StringBuilder();
             builder.Append("(function ($) {");
 
-            foreach (string file in Directory.GetFiles(Server.MapPath("~/js/extenders"), "*.js"))
+            foreach (string file in Directory.GetFiles(Server.MapPath("~/Scripts/extenders"), "*.js"))
                 builder.Append(System.IO.File.ReadAllText(file));
 
             builder.Append("})(window.jQuery);");
@@ -42,7 +42,7 @@ namespace AllEngineers.Controllers
         {
             StringBuilder builder = new StringBuilder();
 
-            foreach (string file in Directory.GetFiles(Server.MapPath("~/css/styles"), "*.css"))
+            foreach (string file in Directory.GetFiles(Server.MapPath("~/Css/styles"), "*.css"))
                 builder.Append(System.IO.File.ReadAllText(file));
 
             return Content(builder.ToString(),"text/css");

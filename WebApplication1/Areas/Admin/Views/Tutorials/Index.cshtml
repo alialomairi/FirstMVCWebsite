@@ -1,0 +1,16 @@
+﻿@{
+    List<Entities.Material> tutorials = ViewBag.Tutorials as List<Entities.Material>;
+}
+@Html.Partial("_TutorialFilter")
+
+    <a class="add"
+       href="~/admin/tutorials/addTutorial?CategoryId=@ViewBag.CategoryId">Add Tutorial</a>
+
+<ul class="grid" data-extender="contentlist"
+    data-add=".add"
+    data-filterform=".filterform"
+    data-pagesize="@ViewBag.pageSize"
+    data-totalcount="@ViewBag.totalcount"
+    data-reloadservice="@Url.Content("~/admin/tutorials/loadTutorials")">
+    @Html.Partial("_TutorialList", tutorials)
+</ul>

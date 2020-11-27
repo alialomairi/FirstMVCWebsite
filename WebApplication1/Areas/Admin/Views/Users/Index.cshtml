@@ -1,0 +1,9 @@
+﻿@{
+    List<Entities.User> users = ViewBag.Users as List<Entities.User>;
+}
+
+@Html.Partial("_UserDialog")
+<a class="add" href="~/admin/users/addUser" data-extender="opendialog" data-dialog=".userdialog" data-target=".grid" data-action="add">Add User</a>
+<ul class="grid" data-extender="contentlist" data-add=".add">
+    @Html.Partial("_UserList", users)
+</ul>

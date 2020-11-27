@@ -1,0 +1,16 @@
+﻿@model AllEngineers.Models.CategoryModel
+
+    <ul class="form dlgbody categorydialog" data-extender="inputform">
+        <li data-name="CategoryName">
+            @Html.LabelFor(x => x.CategoryName, "Category Name")
+            <span class="validator-holder">
+                @Html.TextBoxFor(x => x.CategoryName, new { @class = "required" })
+            </span>
+        </li>
+        <li data-name="CategoryKey">
+            @Html.LabelFor(x => x.CategoryKey, "Category Key")
+            <span class="validator-holder">
+                @Html.TextBoxFor(x => x.CategoryKey, new { @class = "required" })
+            </span>
+        </li>
+    </ul>

@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lists and Tables</title>
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <style type="text/css">
+        table, td, th, caption {
+            border: solid 1px #000;
+        }
+
+        thead, caption {
+            background-color: #919191;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Site Name</h1>
+    </div>
+    <div id="nav">
+        <a href="BasicElements.html">Basic Elememts</a>
+        <a href="ImageElements.html">Image Elememts</a>
+        <a href="ListsTables.html">Lists and Tables</a>
+        <a href="FormatingElements.html">Formating Elements</a>
+        <a href="FormsInputs.html">Forms and Inputs</a>
+        <a href="AudioVideoElements.html">Audio / Video Elements</a>
+        <a href="SemanticElements.html">Semantic Elements</a>
+    </div>
+    <div id="main">
+        <h2>Item Lists</h2>
+        <p>An unordered HTML list:</p>
+        <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+        <p>An ordered HTML list:</p>
+        <ol>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+            <li>Fourth item</li>
+        </ol>
+        <h2>Description Lists</h2>
+        <p>Cryptids of Cornwall:</p>
+
+        <dl>
+            <dt>Beast of Bodmin</dt>
+            <dd>A large feline inhabiting Bodmin Moor.</dd>
+
+            <dt>Morgawr</dt>
+            <dd>A sea serpent.</dd>
+
+            <dt>Owlman</dt>
+            <dd>A giant owl-like creature.</dd>
+        </dl>
+
+        <h2>Tables</h2>
+        <table>
+            <caption>Employees</caption>
+            <colgroup>
+                <col width="40" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">#</th>
+                    <th colspan="3">Full Name</th>
+                    <th colspan="3">Poition</th>
+                    <th rowspan="2">Basic Salary</th>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Depatrmen</th>
+                    <th>Section</th>
+                    <th>Job Tile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mia</td>
+                    <td>Divia</td>
+                    <td>Yang</td>
+                    <td>Administration</td>
+                    <td>HR</td>
+                    <td>HR Officer</td>
+                    <td>$2,540</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Joana</td>
+                    <td>Kaccy</td>
+                    <td>Smith</td>
+                    <td>Administration</td>
+                    <td>HR</td>
+                    <td>HR Officer</td>
+                    <td>$2,370</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Bob</td>
+                    <td>Mel</td>
+                    <td>Lee</td>
+                    <td>Administration</td>
+                    <td>IT</td>
+                    <td>Devloper</td>
+                    <td>$2,730</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Peter</td>
+                    <td>Jone</td>
+                    <td>White</td>
+                    <td>Administration</td>
+                    <td>IT</td>
+                    <td>Designer</td>
+                    <td>$2,860</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Melody</td>
+                    <td>Kelly</td>
+                    <td>Clark</td>
+                    <td>Finance</td>
+                    <td>Payroll Secion</td>
+                    <td>Payroll Manager</td>
+                    <td>$2,880</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Ruby</td>
+                    <td>Mie</td>
+                    <td>Yang</td>
+                    <td>Finance</td>
+                    <td>Sales</td>
+                    <td>Agent</td>
+                    <td>$3,240</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="7">Total</th>
+                    <td>$13,740</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div id="footer">
+        copy rights &copy; 2020
+    </div>
+</body>
+</html>

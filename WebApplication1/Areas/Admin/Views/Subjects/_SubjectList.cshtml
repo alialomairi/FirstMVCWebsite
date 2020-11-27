@@ -1,0 +1,13 @@
+﻿@model List<Entities.Subject>
+
+@foreach (Entities.Subject material in Model)
+{
+    <li data-id="@material.SubjectId">
+        <span class="name">@material.Title</span>
+        <div class="buttons">
+            <a class="edit" href="~/admin/subjects/addSubject/@material.SubjectId" >Edit Subject</a>
+            <a class="delete" href="~/admin/subjects/deletesubject" data-extender="postdata" data-closetarget="li" data-confirmmsg="Are you sure you want to delete this subject?">Delete Subject</a>
+        </div>
+    </li>
+
+}

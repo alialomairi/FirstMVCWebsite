@@ -13,6 +13,9 @@
     float: left;
     padding: 10px;
 }
+#home-articles>article>img {
+    width:100%;
+}
 
 .more {
     text-align: right;

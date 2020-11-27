@@ -8,6 +8,15 @@ namespace Entities
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryKey { get; set; }
+        [NotMapped]
+        public string Link { 
+            get
+            {
+                if (ParentId == null)
+                    return "/" + CategoryKey;
+                return Parent.Link + "/" + CategoryKey;
+            }
+        }
         [ForeignKey("Parent")]
         public int? ParentId { get; set; }
         public virtual Category Parent { get; set; }

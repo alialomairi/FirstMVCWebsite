@@ -22,9 +22,19 @@ namespace AllEngineers
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/facebook").Include(
+                      "~/Scripts/facebook.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
+                      "~/Plugins/ckeditor/ckeditor.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/extenders").Include(
+                      "~/Scripts/extend-1.0.js",
+                      "~/extenders"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Css/bootstrap.css",
+                      "~/Css/site.css"));
         }
     }
 }

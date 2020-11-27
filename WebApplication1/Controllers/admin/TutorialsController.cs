@@ -19,15 +19,42 @@ namespace AllEngineers.Controllers.admin
         }
 
         // GET: Tutorials
-        public ActionResult Index()
+        public ActionResult Index(MaterialModel model)
         {
             ViewBag.TrainerList = ctx.Users.Where(x => x.UserType == UserType.Teacher && x.Enabled).Select(x => new SelectListItem { Text = x.DisplayName, Value = x.UserId.ToString() }).ToList();
             ViewBag.CategoryList = ctx.Categories.Select(x => new SelectListItem { Text = x.CategoryName, Value = x.CategoryId.ToString(),Group=new SelectListGroup { Name = x.ParentId.ToString() } }).ToList();
 
-            ViewBag.Tutorials = ctx.Materials.ToList();
+            IQueryable<Material> query = ctx.Materials.Where(x =>
+            (model.CategoryId == null || x.CategoryId == model.CategoryId) &&
+            (model.TrainerId == null || x.TrainerId == model.TrainerId) &&
+            (model.TutorialName == null || x.MaterialName.Contains(model.TutorialName))
+            ).OrderBy(x => x.MaterialId);
+
+            ViewBag.totalcount = query.Count();
+            ViewBag.pageSize = 10;
+            ViewBag.Tutorials = query.Take(10).ToList();
+
             return View();
         }
         [HttpPost]
+        public ActionResult loadTutorials(MaterialModel model,int pageNumber, int pageSize)
+        {
+            PagingResponse response = new PagingResponse();
+
+            IQueryable<Material> query = ctx.Materials.Where(x =>
+            (model.CategoryId == null || x.CategoryId == model.CategoryId) &&
+            (model.TrainerId == null || x.TrainerId == model.TrainerId) &&
+            (model.TutorialName == null || x.MaterialName.Contains(model.TutorialName))
+            ).OrderBy(x => x.MaterialId);
+
+            response.totalCount = query.Count();
+            List<Material> tutorials = query.Skip((pageNumber -1)*pageSize).Take(pageSize).ToList();
+
+            response.html = this.RenderView("_TutorialList", tutorials);
+            response.success = true;
+
+            return Json(response);
+        }
         public ActionResult addTutorial(MaterialModel model)
         {
             HtmlResponse response = new HtmlResponse();
@@ -35,7 +62,7 @@ namespace AllEngineers.Controllers.admin
             Material tutorial = new Material
             {
                 MaterialName = model.TutorialName,
-                TrainerId = model.TrainerId
+                TrainerId = model.TrainerId.Value
             };
             ctx.Materials.Add(tutorial);
 
@@ -71,7 +98,7 @@ namespace AllEngineers.Controllers.admin
             Material tutorial = ctx.Materials.Find(id);
 
             tutorial.MaterialName = model.TutorialName;
-            tutorial.TrainerId = model.TrainerId;
+            tutorial.TrainerId = model.TrainerId.Value;
 
             ctx.SaveChanges();
 
