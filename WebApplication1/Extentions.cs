@@ -29,11 +29,12 @@ namespace AllEngineers
         {
             path += "/" +parent.CategoryKey;
 
-            builder.Append("<li>");
-            builder.AppendFormat("<a href=\"{0}\">{1}</a>", path, parent.CategoryName);
-            if (parent.HasChilds || parent.HasTutorials)
+            bool haschilds = parent.HasChilds;
+            builder.AppendFormat("<li{0}>", (haschilds && parent.ParentId !=null)? " class=\"dropdown-submenu\" data-extender=\"submenu\"" : "");
+            builder.AppendFormat("<a href=\"{0}\"{1}>{2}{3}</a>", haschilds ? "#":path, haschilds ? " class=\"dropdown-toggle\" data-toggle=\"dropdown\"":"", parent.CategoryName, haschilds ?" <span class=\"caret\"></span>":"");
+            if (parent.HasChilds)
             {
-                builder.Append("<ul>");
+                builder.Append("<ul class=\"dropdown-menu\">");
                 foreach(Category child in parent.Childs)
                 {
                     RenderCategory(child, builder, path);

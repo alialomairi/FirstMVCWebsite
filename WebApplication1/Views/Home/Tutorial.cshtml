@@ -1,0 +1,78 @@
+﻿@model Entities.Material
+
+<div class="row tutorial-title">
+    <img id="banner" src="~/imgs/homebanner.jpg" alt="" />
+    <h2>@Model.MaterialName</h2>
+    <ul>
+        <li>
+            <a href="#" class="fa fa-facebook"></a>
+        </li>
+        <li>
+            <a href="#" class="fa fa-twitter"></a>
+        </li>
+        <li>
+            <a href="#" class="fa fa-linkedin"></a>
+        </li>
+        <li>
+            <a href="#" class="fa fa-envelope"></a>
+        </li>
+        <li>
+            <a href="#" class="fa fa-bookmark"></a>
+        </li>
+    </ul>
+</div>
+
+@{
+    Entities.Subject current = ViewBag.CurrentSubject as Entities.Subject;
+    bool ShowVideo = (bool)ViewBag.ShowVideo;
+}
+<div class="row tutorial-content">
+    <div class="col-md-3">
+        <div>contents:</div>
+        @RenderSubject(Model.Subjects.Where(x=>x.ParentId==null).OrderBy(x => x.SubjectId).ToList(), current)
+    <ul>
+        <li>
+            <a href="@Model.Link/video">Tutorials Video</a>
+        </li>
+
+    </ul>
+    </div>
+
+    <div class="col-md-9 subject-text">
+
+        @if (current != null)
+        {
+            <h3>@current.Title</h3>
+
+            <div>
+                @Html.Raw(current.Content)
+            </div>
+        }
+        else if (ShowVideo)
+        {
+            <div>
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/qK7BjBjrtZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        }
+        else
+        {
+            <div>
+                @Html.Raw(Model.Description)
+            </div>
+        }
+    </div>
+</div>
+
+@helper RenderSubject(IEnumerable<Entities.Subject> subjects, Entities.Subject current)
+{
+    <ul class="subject-list">
+        @foreach (Entities.Subject subject in subjects)
+        {
+            <li>
+                <a @(subject == current ? "class=\"active\"" : "") href="@subject.Link">@subject.Title</a>
+
+                @RenderSubject(subject.Childs, current)
+            </li>
+        }
+    </ul>
+}

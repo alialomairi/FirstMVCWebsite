@@ -1,0 +1,194 @@
+﻿ul.profileform {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.profileform>li.avatar {
+    background-color: #e99d2d;
+    padding: 20px 0;
+    text-align: center;
+}
+
+ul.profileform>li {
+    padding: 5px 20px;
+}
+
+ul.profileform>li .value {
+    font-family:rakkizArabicLight;
+}
+
+ul.profileform>li.avatar img {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+ul.profileform .fa:before {
+    display: inline-block;
+    text-decoration: none;
+}
+
+ul.profileform .fa-edit {
+    color: #e99d2d;
+}
+
+ul.profileform .displayname .fa-edit {
+    color: white;
+}
+
+ul.profileform .fa-check {
+    color: #57ac51;
+}
+
+ul.profileform .fa-times {
+    color: #eb4f31;
+}
+
+.displayname {
+    padding: 4px 0;
+}
+
+ul.profileform li>div.fa:before {
+    margin-left: 10px;
+}
+
+ul.pointboxes>li {
+    float: right;
+    width: 120px;
+    height: 120px;
+    background-color: #eb4f31;
+    margin: 4px;
+}
+
+ul.pointboxes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pointboxes .title {
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+ul.pointboxes .total {
+    font-family: rakkizdigitalnumber;
+    color: white;
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+}
+
+ul.pointboxes .details {
+    display: block;
+    text-align: left;
+    padding: 6px 4px;
+}
+
+ul.pointboxes .details>a {
+    color: #fff;
+    display: inline-block;
+    border: solid 1px #fff;
+    padding: 1px 1px;
+}
+.displayname input[type="text"] {
+    width: 120px;
+}
+ul.profileform li>div.picturebox:before {
+    left: 0;
+    position: absolute;
+    display: none;
+}
+ul.profileform li>div.picturebox:hover:before {
+   display: block;
+}
+ul.profileform li > div.picturebox > input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+/*ul.profileform li > div.picturebox > img {
+    position:absolute;
+}*/
+
+.dlgclipping {
+    padding: 40px 100px;
+}
+    .dlgclipping > div.frame {
+        margin: 0 auto;
+        border: solid 2px #eb4f31;
+        overflow: hidden;
+        cursor: move;
+        position: relative;
+    }
+        .dlgclipping > div.frame > img {
+            position: absolute;
+        }
+.zoonpane {
+    text-align: center;
+}
+
+.zoonpane>a {
+    color: #e99d2d;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.zoonpane>span {
+    display: inline-block;
+    width: 80px;
+}
+
+ul.game-state {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    width: 474px;
+}
+
+ul.game-state>li {
+    width: 150px;
+    height: 150px;
+    background-color: #d74a4a;
+    margin: 4px;
+    float: right;
+}
+
+ul.game-state>li>span.title {
+    float: none;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+}
+
+ul.game-state>li>ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 4px;
+    color: #fff;
+}
+
+ul.game-state>li>ul>li {
+    margin: 2px 0;
+}
+
+ul.game-state>li>ul>li>span.value {
+    font-family: rakkizdigitalnumber;
+}
+
+ul.game-state>li>ul>li>span.key {
+    width: 100px;
+    display: inline-block;
+}

@@ -1,0 +1,29 @@
+﻿@model Entities.Category
+
+
+<h2>@Model.CategoryName</h2>
+
+@if (Model.HasChilds)
+{
+    <ul>
+        @foreach (Entities.Category category in Model.Childs)
+        {
+            <li>
+                <a href="@category.Link">@category.CategoryName</a>
+            </li>
+        }
+    </ul>
+
+}
+@if (Model.HasTutorials)
+{
+    <ul>
+        @foreach (Entities.Material material in Model.Tutorials)
+        {
+            <li>
+                <a href="@material.Link">@material.MaterialName</a>
+            </li>
+        }
+    </ul>
+
+}

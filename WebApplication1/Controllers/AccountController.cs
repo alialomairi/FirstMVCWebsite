@@ -27,7 +27,7 @@ namespace AllEngineers.Controllers
 
         public ActionResult SignIn()
         {
-            ViewBag.Invalid = true;
+            ViewBag.Invalid = false;
             ViewBag.Title = "Sign In";
             return View();
         }
@@ -246,26 +246,44 @@ namespace AllEngineers.Controllers
             int userid = int.Parse((User.Identity as FormsIdentity).Ticket.UserData);
             User user = ctx.Users.Find(userid);
 
-            UserModel model = new UserModel
-            {
-                FullName = user.FullName,
-                DisplayName = user.DisplayName,
-                Email = user.Email,
-                Phone = user.Phone,
-                Username = user.Username
-            };
-
-            ViewData.Model = model;
-            ViewBag.UserId = user.UserId;
-
-            SelectListItem[] materials = ctx.Materials.Select<Material, SelectListItem>(x => new SelectListItem { 
-                Text=x.MaterialName,
-                Value=x.MaterialId.ToString()
-            }).ToArray();
-            ViewBag.Materials = materials;
+            ViewData.Model = user;
 
             ViewBag.Title = "My Profile";
             return View("MyProfile");
+        }
+
+
+        [HttpPost]
+        public ActionResult updateprofile(string field, string value)
+        {
+            JsonResponse response = new JsonResponse { success = true, error = "" };
+
+            int userid = int.Parse((User.Identity as FormsIdentity).Ticket.UserData);
+            User loggeduser = ctx.Users.Find(userid);
+            switch (field)
+            {
+                case "displayname":
+                    loggeduser.DisplayName = value;
+                    break;
+                case "fullname":
+                    loggeduser.FullName = value;
+                    break;
+                case "gender":
+                    loggeduser.Gender = (Gender)byte.Parse(value);
+                    break;
+                case "email":
+                    loggeduser.Email = value;
+                    break;
+                case "phone":
+                    loggeduser.Phone = value;
+                    break;
+                case "role":
+                    loggeduser.UserType = (UserType)byte.Parse(value);
+                    break;
+            }
+            ctx.SaveChanges();
+
+            return Json(response);
         }
 
 
@@ -286,6 +304,7 @@ namespace AllEngineers.Controllers
                 user.Email = model.Email;
                 user.Phone = model.Phone;
                 user.Password = string.IsNullOrWhiteSpace(model.Password) ? user.Password : model.Password;
+                user.UserType = (UserType)model.Role;
 
                 ctx.SaveChanges();
 

@@ -1,0 +1,15 @@
+﻿@model List<Entities.Category>
+
+@foreach (Entities.Category material in Model)
+{
+    <li data-id="@material.CategoryId">
+        <a href="~/admin/categories?ParentId=@material.CategoryId" class="name">@material.CategoryName</a>
+        <span class="graybox">@material.CategoryKey</span><br />
+        <div class="buttons">
+            <a href="~/admin/tutorials?CategoryId=@material.CategoryId" >Tutorials</a>
+            <a class="edit"   href="~/admin/categories/editCategory" data-extender="opendialog" data-dialog=".categorydialog" data-getservice="@Url.Content("~/admin/categories/getcategory")" data-closetarget="li">Edit Category</a>
+            <a class="delete" href="~/admin/categories/deleteCategory" data-extender="postdata" data-closetarget="li" data-confirmmsg="Are you sure you want to delete this Categry?">Delete Category</a>
+        </div>
+    </li>
+
+}

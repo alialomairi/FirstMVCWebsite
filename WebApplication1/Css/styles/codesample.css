@@ -1,0 +1,28 @@
+.codesample>.tabbar {
+    text-align: right;
+}
+
+.codesample>.tabbar>span {
+    display: inline-block;
+    margin: 4px;
+    padding: 4px;
+    border: solid 1px silver;
+    width: 60px;
+    text-align: center;
+}
+
+.codesample>.tabbar>span.active {
+    font-weight: bold;
+}
+
+.codesample>.pagecont>* {
+    width: 100%;
+    height: 320px;
+}
+
+.codesample > .title {
+    position: absolute;
+    padding: 4px;
+    margin: 4px;
+    font-weight: bold;
+}

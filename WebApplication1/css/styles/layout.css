@@ -16,14 +16,13 @@ body {
     margin: auto;
 }
 
-header {
+#logobar {
     background-color: #3f85b4;
 }
 
 #logo {
     float: left;
     padding: 3px 0;
-    margin-top: -30px;
     display: block;
 }
 
@@ -59,7 +58,11 @@ header {
 
 #main-menu {
     padding: 4px;
-    background-color: #fff;
+    background-color: #3f85b4;
+    border-radius: 0;
+    min-height: auto;
+    border: none;
+    margin: 10px 0;
 }
 
 .h-menu ul {
@@ -89,21 +92,30 @@ header {
     }
 
 #main-menu ul > li > a {
-    color: black;
+    color: #fff;
     text-decoration: none;
     display: block;
     text-align: center;
     padding: 0 15px;
-}
-
-    #main-menu ul > li > a:hover {
-        color: #fff;
-        background-color: #3f85b4;
     }
 
+#main-menu ul > li li > a {
+    color: #000;
+}
+
+#main-menu ul > li.open > a {
+    color: #000;
+}
+
+#main-menu ul > li > a:hover {
+    color: #000;
+    background-color: #3f85b4;
+}
+#main-menu ul > li li > a:hover {
+    color:#fff;
+}
 #body > .container {
     background-color: #fff;
-    border-top: solid 1px #b8d8ed;
     position:relative;
 }
 

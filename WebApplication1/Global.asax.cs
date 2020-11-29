@@ -20,8 +20,6 @@ namespace AllEngineers
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            ViewEngineConfig.RegisterViewLocation(ViewEngines.Engines);
         }
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
@@ -68,42 +66,64 @@ namespace AllEngineers
                         else
                         {
                             Category parent = ctx.Categories.SingleOrDefault(x => x.CategoryKey == part1 && x.ParentId == null);
+
                             if (parent == null)
                                 return;
 
                             if (parts.Length == 1)
-                                newPath = "~/categories/index/" + parent.CategoryId.ToString();
+                                newPath = "~/home/category/" + parent.CategoryId.ToString();
                             else
                             {
-                                for (int i = 1; i < parts.Length; i++)
+                                int i = 1;
+                                string part = parts[i];
+
+                                // category
+                                while (i < parts.Length)
                                 {
-                                    string part = parts[i];
+                                    part = parts[i];
 
                                     Category category = parent.Childs.SingleOrDefault(x => x.CategoryKey == part);
+                                    if (category == null)
+                                        break;
 
-                                    if (i == parts.Length - 1)
-                                    {
-                                        // final destination
-                                        if (category == null)
-                                        {
-                                            // not category
-                                            // check for tutorial
-                                            Material tutorial = parent.Tutorials.SingleOrDefault(x => x.MaterialKey == part);
-                                            if (tutorial != null)
-                                                newPath = "~/tutorials/index/" + tutorial.MaterialId.ToString();
-                                        }
-                                        else // category node
-                                            newPath = "~/categories/index/" + category.CategoryId.ToString();
+                                    parent = category;
+                                    i++;
+                                }
+
+                                // tutorial
+                                if( i < parts.Length)
+                                {
+                                    part = parts[i];
+                                    Material tutorial = parent.Tutorials.SingleOrDefault(x => x.MaterialKey == part);
+                                    i++;
+
+                                    Subject subject = null;
+                                    bool video = false;
+                                    while ( i < parts.Length) {
+                                        part = parts[i];
+
+                                        video = (part == "video");
+                                        if (video)
+                                            break;
+
+                                        Subject sub = tutorial.Subjects.SingleOrDefault(x => x.SubjectKey == part);
+                                        if (sub == null)
+                                            break;
+
+                                        subject = sub;
+                                        i++;
                                     }
+
+                                    if (subject != null)
+                                        newPath = "~/home/subject/" + subject.SubjectId.ToString();
                                     else
                                     {
-                                        if (category == null) // the chain is broken
-                                            return;
-
-                                        // the category is a parent for the node
-                                        parent = category;
+                                        newPath = "~/home/tutorial/" + tutorial.MaterialId.ToString();
+                                        search = "v=" + video.ToString();
                                     }
                                 }
+                                else
+                                    newPath = "~/home/category/" + parent.CategoryId.ToString();
                             }
                         }
                     }

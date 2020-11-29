@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Image Elements</title>
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <style type="text/css">
+        picture > img {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>HTML tutorial</h1>
+    </div>
+    <div id="nav">
+        <a href="BasicElements.html">Basic Elements</a>
+        <a href="ImageElements.html">Image Elements</a>
+        <a href="ListsTables.html">Lists and Tables</a>
+        <a href="FormatingElements.html">Formating Elements</a>
+        <a href="FormsInputs.html">Forms and Inputs</a>
+        <a href="AudioVideoElements.html">Audio / Video Elements</a>
+        <a href="SemanticElements.html">Semantic Elements</a>
+    </div>
+    <div id="main">
+        <h2>Images &lt;img&gt;</h2>
+        <p>Defines an image</p>
+        <img src="../imgs/thump.jpg" alt="it" />
+        <h2>Image map and area (&lt;map&gt; and &lt;area&gt;)</h2>
+        <p>Defines a map to clickable areas in an image</p>
+        <img src="../imgs/workplace.jpg" alt="Workplace" usemap="#workmap">
+
+        <map name="workmap">
+            <area shape="poly" coords="34,44,270,44,266,197,270,350,34,350,38,197" alt="Computer" href="computer.htm">
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+        </map>
+        <h2>Picture (&lt;picture&gt;)</h2>
+        <p> Defines a container for multiple image resources</p>
+        <picture>
+            <source media="(min-width: 650px)" srcset="../imgs/country/large.jpg">
+            <source media="(min-width: 465px)" srcset="../imgs/country/medium.jpg">
+            <img src="../imgs/country/small.jpg">
+        </picture>
+        <h2>Figure and figgure caption (&lt;figure&gt; and &lt;figcaption&gt;)</h2>s:
+        <p>Specifies self-contained content (a figure)</p>
+        <figure>
+            <img src="../imgs/figure1.jpg" alt="Trulli">
+            <figcaption>Fig.1 - percentage against age brands.</figcaption>
+        </figure>
+
+        <h2>Drawing Canvas (&lt;canvas&gt;)</h2>
+        <p>Used to draw graphics, on the fly, via scripting (usually JavaScript)</p>
+        <canvas id="myCanvas">
+            Your browser does not support the canvas tag.
+        </canvas>
+
+        <script type="text/javascript">
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 80, 80);
+        </script>
+
+        <h2>SVG graphics (&lt;svg&gt;)</h2>
+        <p>Defines a container for SVG graphics</p>
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+
+    </div>
+    <div id="footer">
+        copy rights &copy; 2020
+    </div>
+</body>
+</html>

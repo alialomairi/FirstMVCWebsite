@@ -1,0 +1,37 @@
+﻿.tutorial-title > h2 {
+    float: left;
+}
+
+.tutorial-title > ul {
+    float: right;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .tutorial-title > ul > li {
+        float: right;
+        margin: 0 4px;
+    }
+
+        .tutorial-title > ul > li > a {
+            border: solid 1px #000;
+            color: #000;
+            font-size: 30px;
+            width: 33px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .tutorial-title > ul > li > a:hover {
+                border: solid 1px #055685;
+                color: #055685;
+            }
+
+.tutorial-content {
+    background-color: #f0f8fe;
+}
+
+.subject-text {
+    background-color: #fff;
+}

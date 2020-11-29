@@ -1,0 +1,47 @@
+﻿@model AllEngineers.Models.SubjectModel
+
+@{ 
+    List<SelectListItem> categoryList = ViewBag.CategoryList as List<SelectListItem>;
+    List<SelectListItem> tutorialList = ViewBag.TutorialList as List<SelectListItem>;
+    List<SelectListItem> subjectList = ViewBag.SubjectList as List<SelectListItem>;
+}
+    <ul class="form filterform" data-extender="inputform">
+        <li data-name="Title" class="submit">
+            @Html.LabelFor(x => x.Title, "Title")
+            <span class="validator-holder">
+                @Html.TextBoxFor(x => x.Title)
+            </span>
+        </li>
+        <li data-name="CategoryId">
+            @Html.Label("CategoryId", "Category Name")
+            <span class="validator-holder">
+                <select id="@Html.Id("CategoryId")"
+                        data-extender="treeddl">
+                    <option value="">None</option>
+                    @foreach (SelectListItem category in categoryList)
+                    {
+                        <option value="@category.Value" data-parent="@category.Group.Name">@category.Text</option>
+                    }
+                </select>
+            </span>
+        </li>
+        <li data-name="TrainerId" class="category submit">
+            @Html.LabelFor(x => x.TutorialId, "Tutorial Name")
+            <span class="validator-holder">
+                @Html.DropDownListFor(x => x.TutorialId, tutorialList, new { @class = "required" })
+            </span>
+        </li>
+        <li data-name="ParentId">
+            @Html.LabelFor(x=>x.ParentId, "Parent Name")
+            <span class="validator-holder">
+                <select id="@Html.IdFor(x=>x.ParentId)"
+                        data-extender="treeddl">
+                    <option value="">None</option>
+                    @foreach (SelectListItem category in subjectList)
+                    {
+                        <option value="@category.Value" data-parent="@category.Group.Name">@category.Text</option>
+                    }
+                </select>
+            </span>
+        </li>
+    </ul>

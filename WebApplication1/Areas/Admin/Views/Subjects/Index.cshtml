@@ -1,0 +1,16 @@
+﻿@{
+    List<Entities.Subject> subjects = ViewBag.Subjects as List<Entities.Subject>;
+}
+@Html.Partial("_SubjectFilter")
+
+    <a class="add"
+       href="~/admin/subjects/addSubject?TutorialId=@ViewBag.TutorialId">Add Subject</a>
+
+<ul class="grid" data-extender="contentlist"
+    data-add=".add"
+    data-filterform=".filterform"
+    data-pagesize="@ViewBag.pageSize"
+    data-totalcount="@ViewBag.totalcount"
+    data-reloadservice="@Url.Content("~/admin/subjects/loadSubjects")">
+    @Html.Partial("_SubjectList", subjects)
+</ul>

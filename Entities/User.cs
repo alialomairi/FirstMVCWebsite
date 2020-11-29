@@ -27,5 +27,6 @@ namespace Entities
         public bool Enabled { get; set; }
 
         public UserType UserType { get; set; }
+        public Gender? Gender { get; set; }
     }
 }
